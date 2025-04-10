@@ -11,9 +11,10 @@ import Button from '@mui/material/Button';
 const ProductDetail = () => {
   const [dataList, setDataList] = useState(null);
   const [size, setSize] = useState('');
-  const { id } = useParams();
+  
 
   const getProductDetail = async () => {
+    const { id } = useParams();
     let url = `http://localhost:3001/products/${id}`;
     let res = await fetch(url);
     let data = await res.json();
@@ -27,7 +28,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     getProductDetail();
-  }, [id]);
+  }, [getProductDetail]);
 
   return (
     <div>
