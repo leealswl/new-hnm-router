@@ -13,21 +13,22 @@ const ProductDetail = () => {
   const [size, setSize] = useState('');
   const { id } = useParams();
 
-  const getProductDetail = async () => {
-    let url = `https://my-json-server.typicode.com/leealswl/new-hnm-router/products/${id}`;
-    let res = await fetch(url);
-    let data = await res.json();
-    // console.log("디테일", data);
-    setDataList(data);
-  };
+  useEffect(() => {
+    const getProductDetail = async () => {
+      let url = `https://my-json-server.typicode.com/leealswl/new-hnm-router/products/${id}`;
+      let res = await fetch(url);
+      let data = await res.json();
+      // console.log("디테일", data);
+      setDataList(data);
+    };
+
+    getProductDetail()},[id])
 
   const handleChange = (event) => {
     setSize(event.target.value);
   };
 
-  useEffect(() => {
-    getProductDetail();
-  }, []);
+
 
   return (
     <div>
