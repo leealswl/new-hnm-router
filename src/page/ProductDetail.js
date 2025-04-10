@@ -14,7 +14,7 @@ const ProductDetail = () => {
   const { id } = useParams();
 
   const getProductDetail = async () => {
-    let url = `http://localhost:3001/products/${id}`;
+    let url = `https://my-json-server.typicode.com/leealswl/new-hnm-router/products/${id}`;
     let res = await fetch(url);
     let data = await res.json();
     // console.log("디테일", data);
@@ -27,6 +27,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     getProductDetail();
+
   }, [id]);
 
   return (
