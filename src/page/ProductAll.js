@@ -18,6 +18,7 @@ const ProductAll = () => {
 
     useEffect(()=>{
         getProducts()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[query])
   return (
     <div>
