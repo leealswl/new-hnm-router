@@ -5,11 +5,10 @@ import { useSearchParams } from 'react-router-dom';
 
 const ProductAll = () => {
     const [productList,setProductList] =useState(null)
-    
+    const [query,setQuery]=useSearchParams()
     
     
     const getProducts=async()=>{
-        const [query]=useSearchParams()
         let searchQuery = query.get('q') || ""
         let url = `https://my-json-server.typicode.com/leealswl/new-hnm-router/products?q=${searchQuery}`;
         let res= await fetch(url)
@@ -19,7 +18,7 @@ const ProductAll = () => {
 
     useEffect(()=>{
         getProducts()
-    },[getProducts])
+    },[query])
   return (
     <div>
       <Container>
