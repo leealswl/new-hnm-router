@@ -7,7 +7,7 @@ const ProductAll = () => {
     const [productList,setProductList] =useState(null)
     // const [query,setQuery]=useSearchParams()
     const [searchParams] = useSearchParams();
-    let searchQuery = query.get('q') || ""
+    let searchQuery = searchParams.get('q') || ""
     
     
     const getProducts=async(query)=>{
