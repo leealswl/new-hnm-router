@@ -1,38 +1,300 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html, body, .app-wrapper {
+    height: 100%;
+    margin: 0;
   }
+  
+.app-wrapper {
+display: flex;
+flex-direction: column;
+}
+.nav-container {
+  width: 100%;
+  /* 데스크탑에서는 전체 컨테이너를 세로로 나열해도 되고, 필요한 경우 별도 레이아웃 적용 가능 */
+}
+.main-content {
+    min-height: calc(100vh - 150px);
+}
+.login-button{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    padding-bottom: 0px;
+    
+}
+.logo-img {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu-button {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+.menu-button li {
+    padding:10px
+}
+
+.menu-area{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.menu-button li {
+    cursor: pointer;
+    position: relative; 
+    transition: color 0.3s ease;
+  }
+  
+  .menu-button li::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 0;
+    height: 2px; 
+    background-color: red;
+    transition: width 0.3s ease;
+  }
+  
+  .menu-button li:hover::after {
+    width: 100%;
+  }
+  
+
+.search-input {
+    border: none;              
+    border-bottom: 1px solid #ccc; 
+    outline: none;             
+    margin-left: 8px;    
+  }
+
+.search-area {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 20px;
+}
+
+.product-img{
+    width: 260px;
+    height: 450px;
+}
+
+.product-detail-img {
+    display: flex;
+    justify-content: flex-end;
+    width: 450px;
+    height: 600px;
+}
+
+
+.product-card {
+    cursor: pointer;
+}
+
+.product-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.product-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.new-product {
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.new-product span {
+    display: inline-block;
+    opacity: 0;
+    animation: slideUp 3s infinite;
+}
+
+.new-product span:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.new-product span:nth-child(2) {
+    animation-delay: 0.6s;
+}
+.new-product span:nth-child(3) {
+    animation-delay: 0.9s;
+}
+.new-product span:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+.conscious-choice {
+    font-size: 1rem;
+    animation: fadeAnimation 3s infinite;
+  }
+  
+  @keyframes fadeAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+.footer {
+    background-color: #fff;         
+    color: #333;                 
+    padding: 40px 20px;
+    font-family: 'GowunDodum-Regular', sans-serif; 
+  }
+  
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+  }
+  
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  .footer-section ul li:hover {
+    text-decoration: underline;
+  }
+  
+
+  .social-media li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+
+ .hamburger-button{
+  display: none; 
+ }
+
+@media (max-width: 600px) {
+  .nav-container {
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .menu-area {
+    display: none;
+  }
+  
+  .hamburger-button {
+    display: block; 
+    position: fixed; 
+    top: 30px;       
+    left: 15px;      
+    z-index: 1100;   
+    order: 1;       
+  }
+  
+  .logo-img {
+    order: 2;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+  }
+  
+ 
+  .login-button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1100;
+    order: 3;
+    margin: 0;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+  }
+
+  .sidebar-menu li {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+  .sidebar-menu li:hover {
+    background-color: red;
+    color: white;
   }
 }
