@@ -13,24 +13,21 @@ const ProductDetail = () => {
   const [size, setSize] = useState('');
   const { id } = useParams();
 
-  useEffect(() => {
-    const getProductDetail = async () => {
-    
-      let url = `http://localhost:3001/products/${id}`;
-      let res = await fetch(url);
-      let data = await res.json();
-      // console.log("디테일", data);
-      setDataList(data);
-    };
-    getProductDetail()
-  }, [id]);
-
-  const handleChange = (e) => {
-    setSize(e.target.value);
+  const getProductDetail = async () => {
+    let url = `http://localhost:3001/products/${id}`;
+    let res = await fetch(url);
+    let data = await res.json();
+    // console.log("디테일", data);
+    setDataList(data);
   };
 
+  const handleChange = (event) => {
+    setSize(event.target.value);
+  };
 
-  
+  useEffect(() => {
+    getProductDetail();
+  }, [id]);
 
   return (
     <div>
