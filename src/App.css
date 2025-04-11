@@ -240,7 +240,7 @@ flex-direction: column;
   
   .hamburger-button {
     display: block; 
-    position: fixed; 
+    position: relative;
     top: 30px;       
     left: 15px;      
     z-index: 1100;   
@@ -256,10 +256,10 @@ flex-direction: column;
   
  
   .login-button {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1100;
+    position: relative;
+    top: auto;
+    right: auto;
+    z-index: auto;
     order: 3;
     margin: 0;
   }
