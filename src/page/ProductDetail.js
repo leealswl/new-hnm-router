@@ -34,10 +34,10 @@ const ProductDetail = () => {
     <div>
       <Container>
         <Grid container spacing={2} columns={16}>
-          <Grid item xs={8} sx={{ py: 2 }}>
+          <Grid xs={16} sm={8} sx={{ py: 2 }}>
             <img className="product-detail-img" src={dataList?.img} alt="" />
           </Grid>
-          <Grid item xs={8}  sx={{ py: 2 }}>
+          <Grid xs={16} sm={8} sx={{ py: 2 }}>
             <div>
               <h1>{dataList?.title}</h1>
             </div>
@@ -51,7 +51,7 @@ const ProductDetail = () => {
                 </div>
               )}
             </div>
-            <FormControl sx={{ width: '25%' }}>
+            <FormControl sx={{ width: '50%' }}>
               <InputLabel id="size-select-label">Size</InputLabel>
               <Select
                 labelId="size-select-label"
