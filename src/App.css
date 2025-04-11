@@ -90,6 +90,7 @@ flex-direction: column;
 }
 
 .product-detail-img {
+    max-width: 100%;
     display: flex;
     justify-content: flex-end;
     width: 450px;

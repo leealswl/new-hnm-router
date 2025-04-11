@@ -71,7 +71,7 @@ const ProductDetail = () => {
                 mt: 2,
                 backgroundColor: 'black',
                 color: 'white',
-                width: '500px',
+                width: { xs: '100%', sm: '500px' }, 
                 height: '35px',
                 '&:hover': { backgroundColor: 'black' }
               }}
@@ -79,7 +79,6 @@ const ProductDetail = () => {
               장바구니 추가 
             </Button>
           </Grid>
-      
         </Grid>
       </Container>
     </div>
