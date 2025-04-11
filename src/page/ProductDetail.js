@@ -51,7 +51,7 @@ const ProductDetail = () => {
                 </div>
               )}
             </div>
-            <FormControl sx={{ width: '50%' }}>
+            <FormControl sx={{ width: '30%' }}>
               <InputLabel id="size-select-label">Size</InputLabel>
               <Select
                 labelId="size-select-label"
