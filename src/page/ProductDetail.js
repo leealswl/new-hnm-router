@@ -34,10 +34,10 @@ const ProductDetail = () => {
     <div>
       <Container>
         <Grid container spacing={2} columns={16}>
-          <Grid xs={16} sm={8} sx={{ py: 2 }}>
+          <Grid item xs={16} sm={8} sx={{ py: 2, textAlign: { xs: 'center', sm: 'left' } }}>
             <img className="product-detail-img" src={dataList?.img} alt="" />
           </Grid>
-          <Grid xs={16} sm={8} sx={{ py: 2 }}>
+          <Grid item xs={16} sm={8} sx={{ py: 2, textAlign: { xs: 'center', sm: 'left' } }}>
             <div>
               <h1>{dataList?.title}</h1>
             </div>
