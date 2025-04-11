@@ -91,10 +91,9 @@ flex-direction: column;
 
 .product-detail-img {
     max-width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    width: 450px;
-    height: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 
