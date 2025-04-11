@@ -134,6 +134,7 @@ flex-direction: column;
     animation-delay: 1.2s;
 }
 
+
 @keyframes slideUp {
     0% {
         opacity: 0;
